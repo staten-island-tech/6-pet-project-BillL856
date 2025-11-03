@@ -15,8 +15,12 @@ print(Ninja.__dict__)
 
 #Lesson 2
 class pet:
-    def __init__(self, name, __happiness, status):
+    def __init__(self, name, __happiness):
         self.name=name
         self.happiness=__happiness
-        self.status=status
+        
+    def play(self, act):
+        act=["Pet", "Fetch", "Play with Toy"]
+        EE=input("Play or No Play")
+
         
