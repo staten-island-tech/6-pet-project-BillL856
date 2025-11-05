@@ -20,11 +20,36 @@ class pet:
         self.__happiness=happiness
         
     def play(self, act):
-        p=10
-        self.__happiness+=p
+        action= [
+            {
+                "act": "fetch",
+                "p":10
+            },
+            {
+                "act": "bellyrubs",
+                "p":15
+            },
+            {
+                "act": "walking",
+                "p": 5
+            },
+            {
+                "act": "toys",
+                "p":20
+            }
+        ]
+        print(action)
+        self.__happiness+=action
+        print(f"{self.name} is playing {act}")
 
     def show_status(self):
         show=input("Want to know the pet's happiness. Yes or No")
         if show=="Yes":
             print(f"{self.name}'s happiness is now {self.__happiness}")
-        
+
+Greg=pet("Greg", 60)
+do=input("To play with Greg, type Play, to find his happiness level, type Status, and to exit, type Close")
+if do=="play".lower():
+    
+
+
