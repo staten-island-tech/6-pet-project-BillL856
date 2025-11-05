@@ -20,8 +20,8 @@ class pet:
         self.__happiness=happiness
         
     def play(self, act):
-        
-            self.__happiness+=10
+        p=10
+        self.__happiness+=p
 
     def show_status(self):
         show=input("Want to know the pet's happiness. Yes or No")
