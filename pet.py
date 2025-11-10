@@ -19,51 +19,16 @@ class pet:
     def __init__(self, name, __happiness):
         self.name=name
         self.happiness=__happiness
-    
-        
-    def play(self, act):
-        self.act=act
-        self.act= [
-            {
-                "act": "fetching",
-                "p":10
-            },
-            {
-                "act": "getting bellyrubs",
-                "p":15
-            },
-            {
-                "act": "going walking",
-                "p": 5
-            },
-            {
-                "act": "with toys",
-                "p":20
-            }
-        ]
-        print(self.act)
-        do=input(f"To play with {self.name}, type Play, to find their happiness level, type Status")
+       
+    def play(self):
+        do=input(f"To play with {self.name}, type Play")
         while do.lower()=="play" or do.lower()=="continue":
-            action=input(f"What do you want to do with {self.name}.")
-            for e in self.act:
-                if action.lower()==e["act"].lower():
-                    self.happiness+=e["p"]
-                    print(f"{self.name} is {action.lower()}")
-                    do=input("Continue or show status")
-                if do.lower()=="status":
-                    self.status=="Yes"
-                    do=input("Continue")
-    def show_status(self, status):
-        self.status=status
-        if status =="Yes":
-            print(f"{self.name}'s happiness is now {self.happiness}")
+            self.happiness+=10
+            print(f"{self.name} is now playing fetch!")
+            do=input(f"Continue or Stop")
+            
+    def show_status(self):
+        print(f"{self.name}'s happiness is now {self.happiness}")
 Greg=pet("Greg", 60)
-
-
-
-
-    
-
-    
-
-
+Greg.play()
+Greg.show_status
