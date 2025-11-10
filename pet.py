@@ -14,7 +14,6 @@ print(Ninja.__dict__)
  """
 
 #Lesson 2
-why=True
 class pet:
     def __init__(self, name, __happiness):
         self.name=name
@@ -25,10 +24,9 @@ class pet:
         while do.lower()=="play" or do.lower()=="continue":
             self.happiness+=10
             print(f"{self.name} is now playing fetch!")
+            self.show_status()
             do=input(f"Continue or Stop")
-            
     def show_status(self):
         print(f"{self.name}'s happiness is now {self.happiness}")
 Greg=pet("Greg", 60)
 Greg.play()
-Greg.show_status
