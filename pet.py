@@ -26,8 +26,8 @@ class pet:
         do=input(f"To play with {self.name}, type Play")
         while do.lower()=="play" or do.lower()=="continue":
             self.happiness+=10
-            self.energy-=5
-            self.hunger-=3
+            self.energy-=10
+            self.hunger-=6
             print(f"{self.name} is now {self.act}")
             if self.energy<30:
                 self.happiness-=20
@@ -70,5 +70,5 @@ class pet:
     def dead(self):
         print(f"{self.name} is dead.")
 
-Greg=pet("Greg", 100, 100, 100)
+Greg=pet("Greg", 50, 50, 50)
 Greg.play({"Playing Fetch"})
