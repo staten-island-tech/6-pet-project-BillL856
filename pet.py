@@ -24,33 +24,29 @@ class pet:
     def play(self, act):
         self.act=act
         do=input(f"To play with {self.name}, type Play")
-        while do.lower()=="play" or do.lower()=="continue":
+        while do.lower() in ("play","continue"):
             self.happiness+=10
-            self.energy-=10
-            self.hunger-=6
+            self.energy-=6
+            self.hunger-=3
             print(f"{self.name} is now {self.act}")
             if self.energy<30:
+                self.happiness-=15
+            elif self.hunger<20:
                 self.happiness-=20
-            if self.energy<25:
-                self.happiness-=30
             self.show_status()
-            do=input(f"Continue, Eat, Sleep, or Stop")
-        if do.lower()=="eat":
-            self.food({"Dog Food"})
-            do=input(f"Continue, Sleep, or Stop")
-        elif do.lower()=="sleep":
-            self.slep()
-            do=input(f"Continue, Eat, or Stop")
-        elif self.happiness==0 or self.happiness<0:
-            self.dead() 
-        elif self.energy==0 or self.energy<0:
-            self.dead() 
-        elif self.hunger==0 or self.hunger<0:
-            self.dead() 
+            self.dead()
+            do=input(f"Continue, Eat, or Sleep") 
+            if do.lower()=="eat":
+                self.food({"Dog Food"})
+                do=input("Continue or Sleep")
+            elif do.lower()=="sleep":
+                self.slep()
+                do=input("Continue or Eat")
 
 
     def food(self, feed):
         self.feed=feed
+        print(f"{self.name} is now eating {self.feed}")
         self.energy+=10
         self.hunger=100
         self.happiness+=25
@@ -68,7 +64,9 @@ class pet:
         print(f"{self.name}'s hunger is now {self.hunger}")
 
     def dead(self):
-        print(f"{self.name} is dead.")
+        if self.hunger <= 0 or self.energy <= 0 or self.happiness <= 0:
+            print(f"{self.name} is dead.")
+            exit()
 
 Greg=pet("Greg", 50, 50, 50)
-Greg.play({"Playing Fetch"})
+Greg.play("Playing Fetch")
