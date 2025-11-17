@@ -1,4 +1,4 @@
-""" #Lesson 1
+""" #Activity 1
 class hero:
     def __init__(self, name, __money, inventory):
         self.name=name
@@ -13,7 +13,7 @@ Ninja.buy({"title":"Sword", "atk":34, "value":25})
 print(Ninja.__dict__)
  """
 
-#Lesson 2
+#Activity 2
 class pet:
     def __init__(self, name, __happiness, __energy, __hunger):
         self.name=name
