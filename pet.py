@@ -24,7 +24,7 @@ class pet:
     def play(self, act):
         self.act=act
         do=input(f"To play with {self.name}, type Play")
-        while do.lower() or doing.lower() in ("play","continue"):
+        while do.lower() in ("play") or doing.lower() in ("continue"):
             self.happiness+=10
             self.energy-=6
             self.hunger-=3
@@ -42,7 +42,6 @@ class pet:
             elif doing.lower()=="sleep":
                 self.slep()
                 doing=input("Continue or Eat")
-
 
     def food(self, feed):
         self.feed=feed
