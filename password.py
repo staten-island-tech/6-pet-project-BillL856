@@ -2,13 +2,14 @@ def passage(email, password):
     evalidation=False
     pvalidation=False
     if "@" not in email:
-        return "INVALID. Retry Email"
-    elif "@" in email:
-        evalidation=True
+        return "INVALID. Retry Email with @ Symbol"
+    if type(email) !=str or type(password)!=str:
+        return "INVALID. Email and Password Must be Strings"
+    if len(password)<8:
+        return "INVALID. Password Must be AT LEAST 8 Characters Long"
     for i in password:
-        if password(i) is i.upper():
-            capital=True
-        elif password(i) is i.digit():
+        if i.isdigit():
             number=True
-    if len(password)>=8 and capital==True and number==True:
-        pvalidation=True
+        if i.isupper():
+            capital=True
+print(passage("bi@", "big8"))
