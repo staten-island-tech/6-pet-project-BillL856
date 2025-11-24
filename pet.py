@@ -25,6 +25,24 @@ class pet:
         self.act=act
         do=input(f"To play with {self.name}, type Play")
         doing=""
+        while do.lower() in "play" or doing.lower() in "continue":
+            self.happiness+=7
+            self.energy-=6
+            self.hunger-=3
+            print(f"{self.name} is now {self.act}")
+            if self.energy<30:
+                self.happiness-=15
+                doin=input("Continue or Sleep")class pet:
+    def __init__(self, name, __happiness, __energy, __hunger):
+        self.name=name
+        self.happiness=__happiness
+        self.energy=__energy
+        self.hunger=__hunger
+
+    def play(self, act):
+        self.act=act
+        do=input(f"To play with {self.name}, type Play")
+        doing=""
         while do.lower() in ("play") or doing.lower() in ("continue"):
             self.happiness+=7
             self.energy-=6
@@ -32,18 +50,20 @@ class pet:
             print(f"{self.name} is now {self.act}")
             if self.energy<30:
                 self.happiness-=15
-            elif self.hunger<20:
+                doin=input("Continue or Sleep")
+                if doin.lower()=="sleep" or doi.lower()=="sleep":
+                    self.slep
+                    doin=input("Continue or Eat")
+            if self.hunger<20:
                 self.happiness-=20
+                doi=input("Continue or Eat")
+                if doi.lower()=="eat" or doin.lower()=="eat":
+                    self.food({"Dog Food"})
+                    doi=input("Continue or Sleep")
             self.show_status()
             self.dead()
-            doing=input(f"Continue, Eat, or Sleep") 
-            if doing.lower()=="eat":
-                self.food({"Dog Food"})
-                doing=input("Continue or Sleep")
-            if doing.lower()=="sleep":
-                self.slep()
-                doing=input("Continue or Eat")
-
+            doing=input(f"Continue") 
+            
     def food(self, feed):
         self.feed=feed
         self.hunger=100
@@ -67,6 +87,7 @@ class pet:
         if self.hunger <= 0 or self.energy <= 0 or self.happiness <= 0:
             print(f"{self.name} is dead.")
             raise SystemExit
+
 
 Greg=pet("Greg", 50, 50, 50)
 Greg.play("Playing Fetch")
