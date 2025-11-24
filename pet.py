@@ -20,7 +20,7 @@ class pet:
         self.happiness=__happiness
         self.energy=__energy
         self.hunger=__hunger
-       
+
     def play(self, act):
         self.act=act
         do=input(f"To play with {self.name}, type Play")
