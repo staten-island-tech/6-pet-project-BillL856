@@ -35,13 +35,11 @@ class pet:
                 doin=input("Continue or Sleep")
                 if doin.lower()=="sleep":
                     self.slep()
-                    doin=input("Continue")
             if self.hunger<20:
                 self.happiness-=20
                 doi=input("Continue or Eat")
                 if doi.lower()=="eat":
                     self.food("Dog Food")
-                    doi=input("Continue")
             self.show_status()
             self.dead()
             doing=input(f"Continue") 
